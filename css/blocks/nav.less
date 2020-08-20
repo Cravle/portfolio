@@ -12,14 +12,48 @@
     font-weight: 700;
     text-decoration: none;
 
-    border: 2px solid transparent;
-    border-radius: 20px;
-
-    padding: 0.66rem 2rem;
+    position: relative;
+    margin-left: 2rem;
 
     transition: border .1s linear;
 
-    &:hover {
-        border-color: @black;
+    &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0px;
+        background-color: @black ;
+        bottom: -5px;
+        left: 0;
+        z-index: 1;
+
+        transition: width .2s linear;
+
+    }
+
+
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover:not(.nav__link--btn) {
+        &:after {
+            width: 100%;
+        }
+    }
+
+    //? MOD
+    &--btn {
+        padding: 0.66rem 2rem;
+        border: 2px solid @black;
+        border-radius: 20px;
+        transition: background-color .2s linear, color .2s linear;
+
+        &:hover {
+            background-color: @black;
+            color: @white;
+        }
+
     }
 }
