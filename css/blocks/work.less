@@ -4,6 +4,12 @@
 
     box-shadow: 0 0 4px fade(@black, 25%);
     border-radius: 10px;
+
+    transition: box-shadow 0.2s linear;
+
+    &:hover {
+        box-shadow: 0 0 25px fade(@black, 25%);
+    }
 }
 
 .work__img {
@@ -34,5 +40,3 @@
     text-transform: uppercase;
     font-weight: 700;
 }
-
-.work__date {}
